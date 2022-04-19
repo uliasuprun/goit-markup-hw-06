@@ -315,25 +315,49 @@
             <li class="social-item-footer">
               <a class="social-link" href="/">
                 <svg width="20" height="20">
-                  <use class="" href="./images/sprite.svg#icon-twitter"></use>
+                  <use href="./images/sprite.svg#icon-twitter"></use>
                 </svg>
               </a>
             </li>
             <li class="social-item-footer">
               <a class="social-link" href="/">
                 <svg width="20" height="20">
-                  <use class="" href="./images/sprite.svg#icon-facebook"></use>
+                  <use href="./images/sprite.svg#icon-facebook"></use>
                 </svg>
               </a>
             </li>
             <li class="social-item-footer">
               <a class="social-link" href="/">
                 <svg width="20" height="20">
-                  <use class="" href="./images/sprite.svg#icon-linkedin"></use>
+                  <use href="./images/sprite.svg#icon-linkedin"></use>
                 </svg>
               </a>
             </li>
           </ul>
+        </div>
+        <div class="contact-form-footer">
+          <form class="contact-form-footer-wrapper">
+            <div>
+              <label for="user-email-news" class="social-title footer"
+                >Подпишитесь на рассылку</label
+              >
+              <input
+                type="email"
+                name="user_email_news"
+                class="contact-form-news"
+                required
+                minlength="2"
+                id="user-email-news"
+                placeholder="E-mail"
+              />
+            </div>
+            <div class="contact-form-news-btn-wrapper">
+              <button type="submit" class="contact-form-news-btn">Подписаться</button>
+              <svg class="news-btn-icon" width="24px" height="24px">
+                <use href="./images/sprite.svg#icon-icon-send"></use>
+              </svg>
+            </div>
+          </form>
         </div>
       </div>
     </footer>
