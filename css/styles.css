@@ -583,6 +583,7 @@ img {
   transform: translate(50%, -50%) scale(0.1);
 }
 .backdrop {
+  z-index: 1;
   opacity: 1;
   visibility: visible;
   position: fixed;
