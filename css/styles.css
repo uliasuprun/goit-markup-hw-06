@@ -501,11 +501,6 @@ img {
   display: flex;
   flex-wrap: wrap;
 }
-.portfolio-list .item {
-  width: 370px;
-  margin-right: 30px;
-  margin-bottom: 30px;
-}
 .portfolio-list .item:nth-child(3n) {
   margin-right: 0;
 }
@@ -513,13 +508,18 @@ img {
   margin-bottom: 0;
 }
 .portfolio-card {
+  margin-right: 30px;
+  margin-bottom: 30px;
   flex-basis: calc((100% - 90px) / 3);
   background: var(--main-light-color);
+}
+.portfolio-card.item {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
-.portfolio-card:hover,
-.portfolio-card:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+.portfolio-card.item:hover,
+.portfolio-card.item:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .portfolio-card-list-overlay {
@@ -543,9 +543,16 @@ img {
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
+.portfolio-link {
+  display: block;
+  text-decoration: none;
+}
 .portfolio-link:hover .portfolio-card-overlay,
 .portfolio-link:focus .portfolio-card-overlay {
   transform: translateY(0%);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .portfolio-wrapper {
   padding: 20px 24px;
@@ -555,10 +562,11 @@ img {
 .portfolio-title {
   margin-top: 0;
   margin-bottom: 4px;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+  color: var(--main-text-color);
 }
 .portfolio-description {
   font-size: 16px;
@@ -590,10 +598,8 @@ img {
   position: absolute;
   transform: translate(50%, -50%) scale(1);
   width: 528px;
-  height: 581px;
   right: 50%;
   top: 50%;
-  padding: 8px;
   background: var(--main-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -601,25 +607,26 @@ img {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-icon-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
   width: 30px;
   height: 30px;
   background: var(--main-background-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  cursor: pointer;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-icon-close:hover,
 .modal-icon-close:focus {
   fill: var(--secondary-accent-color);
 }
-
 .contact-form-title {
   margin-bottom: 12px;
-  margin-top: -4px;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
@@ -628,11 +635,9 @@ img {
   color: var(--main-text-color);
 }
 .contact-form-wrapper {
-  padding-right: 32px;
-  padding-left: 32px;
+  padding: 40px;
   text-align: left;
 }
-
 .contact-form-input {
   width: 100%;
   height: 38px;
@@ -713,25 +718,23 @@ img {
   color: var(--main-accent-color);
 }
 .contact-form-btn {
+  display: block;
   width: 200px;
   height: 50px;
   padding: 10px 55px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
-  margin-bottom: 30px;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
-  display: flex;
-  align-items: center;
-  text-align: center;
   letter-spacing: 0.06em;
   color: var(--main-light-color);
   background-color: var(--main-accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
+  cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .contact-form-btn:focus,
@@ -749,7 +752,6 @@ img {
   color: var(--secondary-text-color);
 }
 .contact-form-input-wrapper {
-  display: block;
   position: relative;
   margin-bottom: 10px;
 }
@@ -761,7 +763,6 @@ img {
   transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .contact-form-input:focus + .contact-form-icon,
 .contact-form-input:hover + .contact-form-icon {
   fill: var(--main-accent-color);
@@ -774,7 +775,6 @@ img {
 }
 .contact-form-footer-wrapper {
   display: flex;
-  align-items: flex-end;
 }
 .contact-form-news {
   width: 358px;
@@ -803,7 +803,8 @@ img {
   position: relative;
 }
 .contact-form-news-btn {
-  position: relative;
+  display: flex;
+  align-items: center;
   width: 200px;
   height: 50px;
   margin-left: 12px;
@@ -816,12 +817,9 @@ img {
   line-height: 1.88;
   letter-spacing: 0.06em;
   color: var(--main-light-color);
-  padding: 10px 62px 10px 29px;
+  padding: 10px 28px;
+  cursor: pointer;
 }
 .news-btn-icon {
-  position: absolute;
-  right: 28px;
-  bottom: 0;
-  transform: translateY(-50%);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-left: 10px;
 }
